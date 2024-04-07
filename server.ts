@@ -2,8 +2,17 @@ import express, { Request, Response } from "express";
 import cors from "cors";
 import morgan from "morgan";
 import router from "./routes/route";
+import { CronJob } from "cron";
 
 const app = express();
+
+const job = new CronJob(
+  "* * * * * *",
+  () => console.log("Hello Wolrd"),
+  null,
+  false,
+  "America/Los_Angeles"
+);
 
 async function main() {
   app.use(morgan("dev"));
@@ -28,6 +37,8 @@ async function main() {
   app.listen(PORT, () => {
     console.info(`Server started on port: ${PORT}`);
   });
+
+  job.start();
 }
 
 main();
