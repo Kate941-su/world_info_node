@@ -18,6 +18,10 @@
 
 express.js
 
+- [ ] make associated enum to retrieve data from API ninja.
+- [ ] make function
+
+
 ### Issue
 
 - [ ] Periodicaly retrieving data from API Ninja.
