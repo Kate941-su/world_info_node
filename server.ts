@@ -112,7 +112,10 @@ const job = new CronJob(
       // const getResult = await strageRepository.get("US");
       // console.log(`result: ${getResult}`);
 
-      await strageRepository.save(saveTest);
+      // await strageRepository.save(saveTest);
+
+      const getResultAll = await strageRepository.getAll();
+      console.log(`result: ${getResultAll}`);
     } catch (e) {
       console.log(e);
     }
