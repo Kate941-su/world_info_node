@@ -20,56 +20,6 @@ const MONGODB_URL = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSW
 
 mongoose.connect(MONGODB_URL);
 
-const dummyDataCN = new CountryAttributesModel({
-  id: 99,
-  countryCode: "CN",
-  surfaceArea: 0,
-  capital: "dummy",
-  currency: { name: "dummy", code: "dummy" },
-  gdp: 0,
-  tourists: 0,
-  population: 0,
-  urbanPopulation: 0,
-  region: "dummy",
-  popGrowth: 0,
-  internetUsers: 0,
-  gdpGrowth: 0,
-  urbanPopulationGrowth: 0,
-  co2Emissions: 0,
-  forestedArea: 0,
-  gdpPerCapita: 0,
-  employmentAgriculture: 0,
-  exports: 0,
-  infantMortality: 0,
-  threatenedSpecies: 0,
-  employmentIndustry: 0,
-});
-
-const dummyDataUS = new CountryAttributesModel({
-  id: 1,
-  countryCode: "US",
-  surfaceArea: 0,
-  capital: "dummy",
-  currency: { name: "dummy", code: "dummy" },
-  gdp: 0,
-  tourists: 0,
-  population: 0,
-  urbanPopulation: 0,
-  region: "dummy",
-  popGrowth: 0,
-  internetUsers: 0,
-  gdpGrowth: 0,
-  urbanPopulationGrowth: 0,
-  co2Emissions: 0,
-  forestedArea: 0,
-  gdpPerCapita: 0,
-  employmentAgriculture: 0,
-  exports: 0,
-  infantMortality: 0,
-  threatenedSpecies: 0,
-  employmentIndustry: 0,
-});
-
 const saveTest: CountryAttributesType = {
   id: 999,
   countryCode: "DUMMY",
@@ -104,7 +54,11 @@ const job = new CronJob(
   async () => {
     console.log("Cron Job Working");
     try {
-      // const response = await apiNinjaRepository.getAttribute("JP");
+      const response: CountryAttributesType =
+        await apiNinjaRepository.getAttribute("JP");
+
+      console.log(`${response.capital}`);
+
       // const result = await dummyDataUS.save();
       // console.log("create succeeded");
       // console.log(response.data);
@@ -114,8 +68,8 @@ const job = new CronJob(
 
       // await strageRepository.save(saveTest);
 
-      const getResultAll = await strageRepository.getAll();
-      console.log(`result: ${getResultAll}`);
+      // const getResultAll = await strageRepository.getAll();
+      // console.log(`result: ${getResultAll}`);
     } catch (e) {
       console.log(e);
     }
