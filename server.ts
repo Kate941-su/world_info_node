@@ -5,7 +5,10 @@ import router from "./routes/route";
 import { CronJob } from "cron";
 import "dotenv/config";
 import { fetchCountryAttribute } from "./service/countryAPI";
-import { CountryAttributesModel } from "./model/country_attributes";
+import {
+  CountryAttributesModel,
+  CountryAttributesType,
+} from "./model/country_attributes";
 import mongoose, { ConnectOptions } from "mongoose";
 import { ObjectId } from "bson";
 import ApiNinjaRepository from "./repository/api_ninja_repository";
@@ -67,6 +70,31 @@ const dummyDataUS = new CountryAttributesModel({
   employmentIndustry: 0,
 });
 
+const saveTest: CountryAttributesType = {
+  id: 999,
+  countryCode: "DUMMY",
+  surfaceArea: 10000,
+  capital: "Capital Dum",
+  currency: { name: "dummy", code: "dummy" },
+  gdp: 10000,
+  tourists: 10000,
+  population: 10000,
+  urbanPopulation: 10000,
+  region: "dummy",
+  popGrowth: 10000,
+  internetUsers: 10000,
+  gdpGrowth: 0,
+  urbanPopulationGrowth: 0,
+  co2Emissions: 0,
+  forestedArea: 0,
+  gdpPerCapita: 0,
+  employmentAgriculture: 0,
+  exports: 0,
+  infantMortality: 0,
+  threatenedSpecies: 0,
+  employmentIndustry: 10000,
+};
+
 const app = express();
 const apiNinjaRepository: ApiNinjaRepository = new ApiNinjaRepositoryImpl();
 const strageRepository: StrageRepository = new StrageRepositoryImpl();
@@ -80,7 +108,11 @@ const job = new CronJob(
       // const result = await dummyDataUS.save();
       // console.log("create succeeded");
       // console.log(response.data);
-      const result = await strageRepository.get("US");
+
+      // const getResult = await strageRepository.get("US");
+      // console.log(`result: ${getResult}`);
+
+      await strageRepository.save(saveTest);
     } catch (e) {
       console.log(e);
     }
