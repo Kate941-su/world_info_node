@@ -8,6 +8,10 @@ import { fetchCountryAttribute } from "./service/countryAPI";
 import { CountryAttributesModel } from "./model/country_attributes";
 import mongoose, { ConnectOptions } from "mongoose";
 import { ObjectId } from "bson";
+import ApiNinjaRepository from "./repository/api_ninja_repository";
+import ApiNinjaRepositoryImpl from "./repository/api_ninja_repository_impl";
+import StrageRepository from "./repository/strage_repository";
+import StrageRepositoryImpl from "./repository/strage_repository_impl";
 
 const MONGODB_URL = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/world_info?authSource=admin`;
 
@@ -64,24 +68,22 @@ const dummyDataUS = new CountryAttributesModel({
 });
 
 const app = express();
+const apiNinjaRepository: ApiNinjaRepository = new ApiNinjaRepositoryImpl();
+const strageRepository: StrageRepository = new StrageRepositoryImpl();
 
 const job = new CronJob(
   "* * * * * *",
   async () => {
     console.log("Cron Job Working");
     try {
-      const result = await dummyDataUS.save();
-      console.log("create succeeded");
+      // const response = await apiNinjaRepository.getAttribute("JP");
+      // const result = await dummyDataUS.save();
+      // console.log("create succeeded");
+      // console.log(response.data);
+      const result = await strageRepository.get("US");
     } catch (e) {
       console.log(e);
     }
-
-    // try {
-    //   const response = await fetchCountryAttribute("US");
-    //   console.log(response.data);
-    // } catch (e) {
-    //   console.log(e);
-    // }
   },
   null,
   false,
