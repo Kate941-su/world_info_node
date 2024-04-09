@@ -15,6 +15,9 @@ import ApiNinjaRepository from "./repository/api_ninja_repository";
 import ApiNinjaRepositoryImpl from "./repository/api_ninja_repository_impl";
 import StrageRepository from "./repository/strage_repository";
 import StrageRepositoryImpl from "./repository/strage_repository_impl";
+import saveToMongoDBCron from "./cron/save_to_mongo_cron";
+import { CountryCode } from "./constants/country_code";
+import { resolve } from "path";
 
 const MONGODB_URL = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/world_info?authSource=admin`;
 
@@ -50,28 +53,21 @@ const apiNinjaRepository: ApiNinjaRepository = new ApiNinjaRepositoryImpl();
 const strageRepository: StrageRepository = new StrageRepositoryImpl();
 
 const job = new CronJob(
-  "* * * * * *",
+  "30 * * * * *",
   async () => {
-    console.log("Cron Job Working");
-    try {
-      const response: CountryAttributesType =
-        await apiNinjaRepository.getAttribute("JP");
+    // await Promise.all(
+    //   Object.values(CountryCode).map((it) => {
+    //     try {
+    //       saveToMongoDBCron(it);
+    //     } catch (_) {
+    //       console.log(`${it} doesn't exist in the API ninja. Check is needed.`);
+    //     }
+    //   })
+    // );
 
-      console.log(`${response.capital}`);
-
-      // const result = await dummyDataUS.save();
-      // console.log("create succeeded");
-      // console.log(response.data);
-
-      // const getResult = await strageRepository.get("US");
-      // console.log(`result: ${getResult}`);
-
-      // await strageRepository.save(saveTest);
-
-      // const getResultAll = await strageRepository.getAll();
-      // console.log(`result: ${getResultAll}`);
-    } catch (e) {
-      console.log(e);
+    for (const code of Object.values(CountryCode)) {
+      await saveToMongoDBCron(code);
+      setTimeout(() => {}, 100);
     }
   },
   null,

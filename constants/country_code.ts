@@ -1,3 +1,5 @@
+// The following countries are already done comment out.
+// AQ,AX,BL,BV,CC,CX,GG,GS,HM,IO,JE,MF,NF,PN,PS,SJ,TF,TW,UM,XK,
 const CountryCode = {
   AD: "AD",
   AE: "AE",
@@ -7,13 +9,13 @@ const CountryCode = {
   AL: "AL",
   AM: "AM",
   AO: "AO",
-  AQ: "AQ",
+  // AQ: "AQ",
   AR: "AR",
   AS: "AS",
   AT: "AT",
   AU: "AU",
   AW: "AW",
-  AX: "AX",
+  // AX: "AX",
   AZ: "AZ",
   BA: "BA",
   BB: "BB",
@@ -24,7 +26,7 @@ const CountryCode = {
   BH: "BH",
   BI: "BI",
   BJ: "BJ",
-  BL: "BL",
+  // BL: "BL",
   BM: "BM",
   BN: "BN",
   BO: "BO",
@@ -32,12 +34,12 @@ const CountryCode = {
   BR: "BR",
   BS: "BS",
   BT: "BT",
-  BV: "BV",
+  // BV: "BV",
   BW: "BW",
   BY: "BY",
   BZ: "BZ",
   CA: "CA",
-  CC: "CC",
+  // CC: "CC",
   CD: "CD",
   CF: "CF",
   CG: "CG",
@@ -52,7 +54,7 @@ const CountryCode = {
   CU: "CU",
   CV: "CV",
   CW: "CW",
-  CX: "CX",
+  // CX: "CX",
   CY: "CY",
   CZ: "CZ",
   DE: "DE",
@@ -79,7 +81,7 @@ const CountryCode = {
   GD: "GD",
   GE: "GE",
   GF: "GF",
-  GG: "GG",
+  // GG: "GG",
   GH: "GH",
   GI: "GI",
   GL: "GL",
@@ -88,13 +90,13 @@ const CountryCode = {
   GP: "GP",
   GQ: "GQ",
   GR: "GR",
-  GS: "GS",
+  // GS: "GS",
   GT: "GT",
   GU: "GU",
   GW: "GW",
   GY: "GY",
   HK: "HK",
-  HM: "HM",
+  // HM: "HM",
   HN: "HN",
   HR: "HR",
   HT: "HT",
@@ -104,12 +106,12 @@ const CountryCode = {
   IL: "IL",
   IM: "IM",
   IN: "IN",
-  IO: "IO",
+  // IO: "IO",
   IQ: "IQ",
   IR: "IR",
   IS: "IS",
   IT: "IT",
-  JE: "JE",
+  // JE: "JE",
   JM: "JM",
   JO: "JO",
   JP: "JP",
@@ -139,7 +141,7 @@ const CountryCode = {
   MC: "MC",
   MD: "MD",
   ME: "ME",
-  MF: "MF",
+  // MF: "MF",
   MG: "MG",
   MH: "MH",
   MK: "MK",
@@ -161,7 +163,7 @@ const CountryCode = {
   NA: "NA",
   NC: "NC",
   NE: "NE",
-  NF: "NF",
+  // NF: "NF",
   NG: "NG",
   NI: "NI",
   NL: "NL",
@@ -179,9 +181,9 @@ const CountryCode = {
   PK: "PK",
   PL: "PL",
   PM: "PM",
-  PN: "PN",
+  // PN: "PN",
   PR: "PR",
-  PS: "PS",
+  // PS: "PS",
   PT: "PT",
   PW: "PW",
   PY: "PY",
@@ -199,7 +201,7 @@ const CountryCode = {
   SG: "SG",
   SH: "SH",
   SI: "SI",
-  SJ: "SJ",
+  // SJ: "SJ",
   SK: "SK",
   SL: "SL",
   SM: "SM",
@@ -214,7 +216,7 @@ const CountryCode = {
   SZ: "SZ",
   TC: "TC",
   TD: "TD",
-  TF: "TF",
+  // TF: "TF",
   TG: "TG",
   TH: "TH",
   TJ: "TJ",
@@ -226,11 +228,11 @@ const CountryCode = {
   TR: "TR",
   TT: "TT",
   TV: "TV",
-  TW: "TW",
+  // TW: "TW",
   TZ: "TZ",
   UA: "UA",
   UG: "UG",
-  UM: "UM",
+  // UM: "UM",
   US: "US",
   UY: "UY",
   UZ: "UZ",
@@ -243,7 +245,7 @@ const CountryCode = {
   VU: "VU",
   WF: "WF",
   WS: "WS",
-  XK: "XK",
+  // XK: "XK",
   YE: "YE",
   YT: "YT",
   ZA: "ZA",
@@ -271,8 +273,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 6;
     case CountryCode.AO:
       return 7;
-    case CountryCode.AQ:
-      return 8;
+    // case CountryCode.AQ:
+    //   return 8;
     case CountryCode.AR:
       return 9;
     case CountryCode.AS:
@@ -283,8 +285,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 12;
     case CountryCode.AW:
       return 13;
-    case CountryCode.AX:
-      return 14;
+    // case CountryCode.AX:
+    //   return 14;
     case CountryCode.AZ:
       return 15;
     case CountryCode.BA:
@@ -305,8 +307,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 23;
     case CountryCode.BJ:
       return 24;
-    case CountryCode.BL:
-      return 25;
+    // case CountryCode.BL:
+    //   return 25;
     case CountryCode.BM:
       return 26;
     case CountryCode.BN:
@@ -321,8 +323,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 31;
     case CountryCode.BT:
       return 32;
-    case CountryCode.BV:
-      return 33;
+    // case CountryCode.BV:
+    //   return 33;
     case CountryCode.BW:
       return 34;
     case CountryCode.BY:
@@ -331,8 +333,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 36;
     case CountryCode.CA:
       return 37;
-    case CountryCode.CC:
-      return 38;
+    // case CountryCode.CC:
+    //   return 38;
     case CountryCode.CD:
       return 39;
     case CountryCode.CF:
@@ -361,8 +363,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 51;
     case CountryCode.CW:
       return 52;
-    case CountryCode.CX:
-      return 53;
+    // case CountryCode.CX:
+    //   return 53;
     case CountryCode.CY:
       return 54;
     case CountryCode.CZ:
@@ -415,8 +417,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 78;
     case CountryCode.GF:
       return 79;
-    case CountryCode.GG:
-      return 80;
+    // case CountryCode.GG:
+    //   return 80;
     case CountryCode.GH:
       return 81;
     case CountryCode.GI:
@@ -433,8 +435,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 87;
     case CountryCode.GR:
       return 88;
-    case CountryCode.GS:
-      return 89;
+    // case CountryCode.GS:
+    //   return 89;
     case CountryCode.GT:
       return 90;
     case CountryCode.GU:
@@ -445,8 +447,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 93;
     case CountryCode.HK:
       return 94;
-    case CountryCode.HM:
-      return 95;
+    // case CountryCode.HM:
+    //   return 95;
     case CountryCode.HN:
       return 96;
     case CountryCode.HR:
@@ -465,8 +467,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 103;
     case CountryCode.IN:
       return 104;
-    case CountryCode.IO:
-      return 105;
+    // case CountryCode.IO:
+    //   return 105;
     case CountryCode.IQ:
       return 106;
     case CountryCode.IR:
@@ -475,8 +477,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 108;
     case CountryCode.IT:
       return 109;
-    case CountryCode.JE:
-      return 110;
+    // case CountryCode.JE:
+    //   return 110;
     case CountryCode.JM:
       return 111;
     case CountryCode.JO:
@@ -535,8 +537,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 138;
     case CountryCode.ME:
       return 139;
-    case CountryCode.MF:
-      return 140;
+    // case CountryCode.MF:
+    //   return 140;
     case CountryCode.MG:
       return 141;
     case CountryCode.MH:
@@ -579,8 +581,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 160;
     case CountryCode.NE:
       return 161;
-    case CountryCode.NF:
-      return 162;
+    // case CountryCode.NF:
+    //   return 162;
     case CountryCode.NG:
       return 163;
     case CountryCode.NI:
@@ -615,12 +617,12 @@ const toInt = (countryCode: CountryCode): Number => {
       return 178;
     case CountryCode.PM:
       return 179;
-    case CountryCode.PN:
-      return 180;
+    // case CountryCode.PN:
+    //   return 180;
     case CountryCode.PR:
       return 181;
-    case CountryCode.PS:
-      return 182;
+    // case CountryCode.PS:
+    //   return 182;
     case CountryCode.PT:
       return 183;
     case CountryCode.PW:
@@ -655,8 +657,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 198;
     case CountryCode.SI:
       return 199;
-    case CountryCode.SJ:
-      return 200;
+    // case CountryCode.SJ:
+    //   return 200;
     case CountryCode.SK:
       return 201;
     case CountryCode.SL:
@@ -685,8 +687,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 213;
     case CountryCode.TD:
       return 214;
-    case CountryCode.TF:
-      return 215;
+    // case CountryCode.TF:
+    //   return 215;
     case CountryCode.TG:
       return 216;
     case CountryCode.TH:
@@ -709,16 +711,16 @@ const toInt = (countryCode: CountryCode): Number => {
       return 225;
     case CountryCode.TV:
       return 226;
-    case CountryCode.TW:
-      return 227;
+    // case CountryCode.TW:
+    //   return 227;
     case CountryCode.TZ:
       return 228;
     case CountryCode.UA:
       return 229;
     case CountryCode.UG:
       return 230;
-    case CountryCode.UM:
-      return 231;
+    // case CountryCode.UM:
+    //   return 231;
     case CountryCode.US:
       return 232;
     case CountryCode.UY:
@@ -743,8 +745,8 @@ const toInt = (countryCode: CountryCode): Number => {
       return 242;
     case CountryCode.WS:
       return 243;
-    case CountryCode.XK:
-      return 244;
+    // case CountryCode.XK:
+    //   return 244;
     case CountryCode.YE:
       return 245;
     case CountryCode.YT:

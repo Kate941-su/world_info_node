@@ -23,9 +23,9 @@ class StrageRepositoryImpl implements StrageRepository {
     const model = new CountryAttributesModel(countryAttributes);
     try {
       const result = await model.save();
-      console.log(`save succeed!! => ${result}`);
+      console.log(`save succeed!! => ${result.capital}`);
     } catch (e) {
-      console.log(e);
+      console.log(`strage repository save error => ${e}`);
     }
   }
 }
