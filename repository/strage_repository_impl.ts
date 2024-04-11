@@ -14,11 +14,39 @@ class StrageRepositoryImpl implements StrageRepository {
   }
 
   public async get(countryCode: CountryCode): Promise<CountryAttributesType> {
-    const result: CountryAttributesType = await CountryAttributesModel.findOne({
+    const result = await CountryAttributesModel.findOne({
       countryCode: countryCode,
     });
     console.log(`get(): ${result}`);
-    return result;
+
+    const attribute: CountryAttributesType = {
+      id: result.id,
+      countryCode: result.countryCode,
+      surfaceArea: result.surfaceArea,
+      capital: result.countryCode,
+      currency: {
+        code: result.currency.code,
+        name: result.currency.name,
+      },
+      gdp: result.gdp,
+      tourists: result.tourists,
+      population: result.population,
+      urbanPopulation: result.urbanPopulation,
+      region: result.region,
+      popGrowth: result.popGrowth,
+      internetUsers: result.internetUsers,
+      gdpGrowth: result.gdpGrowth,
+      urbanPopulationGrowth: result.urbanPopulationGrowth,
+      co2Emissions: result.co2Emissions,
+      forestedArea: result.forestedArea,
+      gdpPerCapita: result.gdpPerCapita,
+      employmentAgriculture: result.employmentAgriculture,
+      exports: result.exports,
+      infantMortality: result.infantMortality,
+      threatenedSpecies: result.threatenedSpecies,
+      employmentIndustry: result.employmentIndustry,
+    };
+    return attribute;
   }
 
   public async save(countryAttributes: CountryAttributesType) {
