@@ -18,8 +18,15 @@ import { resolve } from "path";
 
 const MONGODB_URL = `mongodb://${process.env.DB_USERNAME}:${process.env.DB_PASSWORD}@localhost:27017/world_info?authSource=admin`;
 
-mongoose.connect(MONGODB_URL);
+const mongooseInit = async () => {
+  try {
+    const _ = await mongoose.connect(MONGODB_URL);
+  } catch (e) {
+    console.log(e);
+  }
+};
 
+mongooseInit();
 const app = express();
 const apiNinjaRepository: ApiNinjaRepository = new ApiNinjaRepositoryImpl();
 const strageRepository: StrageRepository = new StrageRepositoryImpl();
@@ -36,16 +43,24 @@ const job = new CronJob(
     //     }
     //   })
     // );
-
     // for (const code of Object.values(CountryCode)) {
     //   await saveToMongoDBCron(code);
     // }
-    console.log("===== Finish!! =====");
+    // console.log("===== Finish!! =====");
   },
   null,
   false,
   "America/Los_Angeles"
 );
+
+const immediate = async () => {
+  for (const code of Object.values(CountryCode)) {
+    await saveToMongoDBCron(code);
+  }
+  console.log("===== Finish!! =====");
+};
+
+immediate();
 
 async function main() {
   app.use(morgan("dev"));
