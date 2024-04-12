@@ -23,7 +23,7 @@ class StrageRepositoryImpl implements StrageRepository {
       id: result.id,
       countryCode: result.countryCode,
       surfaceArea: result.surfaceArea,
-      capital: result.countryCode,
+      capital: result.capital,
       currency: {
         code: result.currency.code,
         name: result.currency.name,
