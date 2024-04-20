@@ -60,7 +60,7 @@ const immediate = async () => {
   console.log("===== Finish!! =====");
 };
 
-// immediate();
+immediate();
 
 async function main() {
   app.use(morgan("dev"));
